@@ -11,7 +11,7 @@ Pour commancer installer les éléments suivants :
   ```
 
 2. Construisez le conteneur
-  si vous êtes sur windows ouvrez le dossier qui contien l'application et écrivez cmd la barre du chemin du dossier
+  si vous êtes sur windows, ouvrez le dossier qui contien l'application et écrivez `cmd` dans la barre de chemin du dossier
   pour ouvrir un terminal qui pointe directement sur le chemin voulue , tapez ensuite
   ```bash
   docker-compose up --build
@@ -26,9 +26,9 @@ Pour commancer installer les éléments suivants :
   sur la barre de recherche de votre navigateur
 
 ## Structure du dossier de l'application
-- `frontend/` - Contient le code front (ReactJS) avec un fichier Dockerfile.
-- `backend/` - Contient le code back (Flask) avec un fichier Dockerfile.
-- `docker-compose.yml` - Fichier de configuration de Docker Compose.
+- le dossier frontend - Contient le code front (ReactJS) avec un fichier Dockerfile.
+- le dossier backend - Contient le code back (Flask) avec un fichier Dockerfile.
+- le fichier docker-compose.yml - Fichier de configuration de Docker Compose.
 
 ## Utilisation
 
@@ -46,7 +46,8 @@ Pour commancer installer les éléments suivants :
 
  ## La base de données
  L'application utilise MySQL pour stocker les données.
-  -MySQL et ses configurations est défini dans le fichier `docker-compose.yml`
+
+ MySQL et ses configurations est défini dans le fichier `docker-compose.yml`
 
 Pour géré la base de donnée phpMyAdmin est également ajouté au projet
   -phpMyAdmin et ses configurations est défini dans le fichier `docker-compose.yml`
