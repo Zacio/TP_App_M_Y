@@ -1,16 +1,19 @@
 # App Todo
 
 ## Prérequis
+
 Pour commancer installer les éléments suivants :
 - https://www.docker.com/get-started [docker]
 
 ## Instalation du projet
+
 1. Clonez le projet :
   ```bash
   git clone https://github.com/Zacio/TP_App_M_Y.git
   ```
 
 2. Construisez le conteneur
+
   si vous êtes sur windows, ouvrez le dossier qui contien l'application et écrivez `cmd` dans la barre de chemin du dossier
   pour ouvrir un terminal qui pointe directement sur le chemin voulue , tapez ensuite
   ```bash
@@ -19,6 +22,7 @@ Pour commancer installer les éléments suivants :
   dans le terminal
 
 3. Accédez à l'application
+
   vous pouvez accédez a l'application en tapant
   ```
   http://localhost:3000
@@ -26,6 +30,7 @@ Pour commancer installer les éléments suivants :
   sur la barre de recherche de votre navigateur
 
 ## Structure du dossier de l'application
+
 - le dossier frontend - Contient le code front (ReactJS) avec un fichier Dockerfile.
 - le dossier backend - Contient le code back (Flask) avec un fichier Dockerfile.
 - le fichier docker-compose.yml - Fichier de configuration de Docker Compose.
@@ -89,8 +94,10 @@ mysql:
 ```
 
 ## Les healthchecks
+
 ils permette de savoir si les conteneur fonctionnent correctement
 example :
+
 ```yml
 healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
@@ -99,9 +106,11 @@ healthcheck:
       retries: 3
 ```
 ## Les dockerfile
+
 Les fichiers Dockerfile doivent être placés dans les répertoires correspondant à leurs services respectifs pour que la configuration docker-compose.yml puisse les trouver facilement
 
 dockerfile back
+
 ```dockerfile
 # Utiliser une image python comme base
 FROM python:3.9-slim
@@ -122,6 +131,7 @@ CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
 ```
 
 dockerfile front :
+
 ```dockerfile
 # Utiliser une image Node.js comme base
 FROM node:16-alpine
@@ -146,8 +156,10 @@ CMD ["npm", "run", "dev"]
 ```
 
 ## Le docker compose
+
 Le fichier Docker Compose est un fichier yaml qui permet de définir et d’orchestrer plusieurs conteneurs Docker il doit-etre placer
 a la racine du projet
+
 ```yml
 services:
   back:
@@ -235,7 +247,9 @@ volumes:
   mysql_data:
 ```
 ### Comment ça marche
+
 voicie un example de fonctionnement
+
 - services: Contien les différents outils utiliser par l'application
   - back : c'est le nom de l'outils 
     - build : c'est le chemin vers l'outil (dans ce cas la le dockerfile du backend)
@@ -245,6 +259,7 @@ voicie un example de fonctionnement
     - healthcheck : permette de savoir si l'outil fonctionnent correctement
 
 il existe aussi 
+
 - image : permet de spécifier l'image Docker à utiliser pour un outil 
 - networks : Définit le réseau utilisé par les services.
 - volumes : Définit le volume pour persister les données MySQL.
