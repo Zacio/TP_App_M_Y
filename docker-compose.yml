@@ -55,7 +55,7 @@ services:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: rootpassword
     ports:
-      - "8081:80"
+      - "8000:80"
     networks:
       - app_network
 
